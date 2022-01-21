@@ -1,0 +1,11 @@
+import { PrivateKey, SolanaAccountId, SolanaTransaction, Transaction } from '@kin-sdk/core';
+import { SubmitPaymentOptions } from './submit-payment-options';
+export declare function serializeCreateAccountRequest(protoTx: Transaction): Uint8Array;
+export declare function serializeRequestAirdropRequest(publicKey: string, amount: string): Uint8Array;
+export declare function serializeGetTokenAccountBalanceRequest(tokenAccount: SolanaAccountId): Uint8Array;
+export declare function serializeGetBalanceRequest(publicKey: string): Uint8Array;
+export declare function serializeSubmitTransactionRequest(tx: Transaction): Uint8Array;
+export declare function serializeMinBalanceReq(): Uint8Array;
+export declare function serializeResolveTokenAccountsRequest(publicKey: string): Uint8Array;
+export declare function serializeSubmitPaymentTransaction({ secret, tokenAccount, destination, amount, memo, type }: SubmitPaymentOptions, subsidizer: any, tokenProgram: any, appIndex?: number): [PrivateKey, SolanaTransaction];
+export declare function serializeSubmitPaymentRequest(pk: any, transaction: any, resp: any): Transaction;
